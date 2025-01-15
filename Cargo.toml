@@ -8,6 +8,4 @@ crate-type = ["rlib"]
 
 [dependencies]
 drm = "0.14.1"
-image = "0.25.5"
-wayland-client = "0.31.7"
-x11 = "2.21.0"
+gbm = "0.18.0"

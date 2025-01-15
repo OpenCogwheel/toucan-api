@@ -1,11 +1,9 @@
-pub mod types;
-pub mod card;
-pub mod api;
+pub mod other;
+pub mod core;
+pub mod platform;
 
-use api::ToucanAPI;
+use core::api::ToucanAPI;
 
-pub use card::*;
-
-pub fn init(card: Card) -> ToucanAPI {
-    ToucanAPI::init(card)
+pub fn init(cardp: &str) -> ToucanAPI {
+    ToucanAPI::init(cardp)
 }

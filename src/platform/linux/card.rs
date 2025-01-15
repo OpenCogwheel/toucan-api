@@ -2,6 +2,8 @@ use drm::control::Device as ControlDevice;
 use drm::Device;
 use std::fs::File;
 use std::fs::OpenOptions;
+use std::os::fd::AsRawFd;
+use std::os::fd::RawFd;
 use std::os::unix::io::{AsFd, BorrowedFd};
 
 pub struct Card(File);
@@ -9,6 +11,12 @@ pub struct Card(File);
 impl AsFd for Card {
     fn as_fd(&self) -> BorrowedFd<'_> {
         self.0.as_fd()
+    }
+}
+
+impl AsRawFd for Card {
+    fn as_raw_fd(&self) -> RawFd {
+        self.0.as_raw_fd()
     }
 }
 
